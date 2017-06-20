@@ -12,23 +12,32 @@ Most listed `commands` will be here only as helper and should be executed with u
 
 For any clarification, please open git issues. Also, Google is your friend.
 
+## Prerequisites
+- know your OS
+- know how to use a console or a terminal
+- know basic Javascript Syntax
+- have a nice text editor that supports programming languages, I suggest [Visual Code Studio](https://code.visualstudio.com)
+- being passionate to learn as the road is long
+
 ## Concepts to learn
 
-- separation of concerns
+- frontend and backend respectives javascript ecosystems
 - working with a single page application as the frontend to optimise network ressources
-- microservice approach
-- restfull-ish API approach (true restfull is for philosophers)
 - teamwork with branches and pull requests
 - documentation, code quality and maintenability
-- code transpiling, code standards (es3, es5, es6, es7...)
-- testing and CI tools
+- code transpiling, code standards (babel for es5, es6, es7...)
+- restfull API approach
+- microservice approach
+- separation of concerns (avoiding spaghetti code)
+- testing and [CI tools](http://www.code-maze.com/top-8-continuous-integration-tools/)
 
 # The first steps checklist...
 
-- [ ] get this project cloned on your machine
-    - [ ] have git installed locally
+- [ ] fork a copy of this repo on your personnal github
     - [ ] have a github account
-    - [ ] clone the project by entering `git clone [repo name]` in your git terminal of equivalent git tool
+- [ ] get your forked version of the project cloned on your machine
+    - [ ] have [Git](https://git-scm.com/downloads) installed locally
+    - [ ] clone the project by entering `git clone [your forked repo url]` in your git terminal of equivalent git tool. The url should look like `https://github.com/[USERNAME]/progressive-training.git`
 - [ ] have nodejs working, preferably a version higher than 6.0.0
     - [ ] downloading directly from the [download page] or using [NVM](https://github.com/creationix/nvm#install-script) (https://nodejs.org/en/download/)
     - [ ] have a working version of npm and node `node -v` and `npm -v` should give version numbers
