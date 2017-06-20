@@ -41,6 +41,7 @@ For any clarification, please open git issues. Also, Google is your friend.
 - [ ] have nodejs working, preferably a version higher than 6.0.0
     - [ ] downloading directly from the [download page] or using [NVM](https://github.com/creationix/nvm#install-script) (https://nodejs.org/en/download/)
     - [ ] have a working version of npm and node `node -v` and `npm -v` should give version numbers
+    - [ ] understand how [commonjs](https://nodejs.org/docs/latest/api/modules.html) works
 - [ ] FRONTEND
     - [ ] Let's use a generator to create the client folder. install [CRA](https://github.com/facebookincubator/create-react-app) with `npm i -g create-react-app`
     - [ ] CRA will create the folder, add the required packages and install everything to bootstrap. Use `create-react-app client` from this project's root.
