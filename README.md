@@ -29,31 +29,13 @@ For any clarification, please open git issues. Also, Google is your friend.
 - restfull API approach
 - microservice approach
 - separation of concerns (avoiding spaghetti code)
-- testing and [CI tools](http://www.code-maze.com/top-8-continuous-integration-tools/)
+- testing and CI tools
 
-# The first steps checklist...
-
-- [ ] fork a copy of this repo on your personnal github
-    - [ ] have a github account
-- [ ] get your forked version of the project cloned on your machine
-    - [ ] have [Git](https://git-scm.com/downloads) installed locally
-    - [ ] clone the project by entering `git clone [your forked repo url]` in your git terminal of equivalent git tool. The url should look like `https://github.com/[USERNAME]/progressive-training.git`
-- [ ] have nodejs working, preferably a version higher than 6.0.0
-    - [ ] downloading directly from the [download page] or using [NVM](https://github.com/creationix/nvm#install-script) (https://nodejs.org/en/download/)
-    - [ ] have a working version of npm and node `node -v` and `npm -v` should give version numbers
-    - [ ] understand how [commonjs](https://nodejs.org/docs/latest/api/modules.html) works
-- [ ] FRONTEND
-    - [ ] Let's use a generator to create the client folder. install [CRA](https://github.com/facebookincubator/create-react-app) with `npm i -g create-react-app`
-    - [ ] CRA will create the folder, add the required packages and install everything to bootstrap. Use `create-react-app client` from this project's root.
-    - [ ] navigate to the newly created folder and explore the react app. Run it with `npm start` to start a server and view it running live
-
-- [ ] BACKEND
-    - [ ] I like to work with a code refresher named [nodemon](https://nodemon.io/) (`npm i -g nodemon`). this works exactly like the `node` command but restarts automatically the app if a file changed.
-    - [ ] create a folder to handle the server code and dependencies (let's assume the folder is called `server`)
-    - [ ] in the server folder, initiate you npm package with `npm init` as this will be usefull to register our third party modules we will be using (`npm init -y` allow to skip the questionning if you find that anoying).
-    - [ ] add a file named `server.js` in your server folder where your nodejs app will be running. Also add some content like `console.log('hello world') to make sure your app is running.
-
-## A few ressources worth metionning for advancing the challenges
+## A few ressources to help
+- General
+    - [commonjs](https://nodejs.org/docs/latest/api/modules.html) (split code into multiple files)
+    - [js version naming](https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/) (explains the different names given to javascript)
+    - [2015/es6 features](http://es6-features.org) (compared to es5)
 - Frontend
     - javascript single page app
         - [react](https://facebook.github.io/react/tutorial/tutorial.html) (reactive javascript view)
@@ -90,9 +72,31 @@ For any clarification, please open git issues. Also, Google is your friend.
         - [mongodb](https://www.mongodb.com/what-is-mongodb) (nosql json/javascript database)
         - [mongoose](http://mongoosejs.com/) (mongodb wrapper for nodejs)
 - Quality and processes
+    - [Git](https://www.git-tower.com/blog/git-cheat-sheet/) (versionning tool)
     - [eslint](http://eslint.org/) (code quality inspector documentation)
     - [node eslint](https://www.npmjs.com/package/eslint) (actual runner to verify your code)
-    - [travis](https://docs.travis-ci.com/user/getting-started/) (continuous integration system)
+    - [CI tools](http://www.code-maze.com/top-8-continuous-integration-tools/) (continuous integration systems)
+    - [travis](https://docs.travis-ci.com/user/getting-started/) (a free/minimal continuous integration system)
+
+# The first steps checklist...
+- [ ] fork a copy of this repo on your personnal github
+    - [ ] have a github account
+- [ ] get your forked version of the project cloned on your machine
+    - [ ] have [Git](https://git-scm.com/downloads) installed locally
+    - [ ] clone the project by entering `git clone [your forked repo url]` in your git terminal of equivalent git tool. The url should look like `https://github.com/[USERNAME]/progressive-training.git`
+- [ ] have nodejs working, preferably a version higher than 6.0.0
+    - [ ] downloading directly from the [download page] or using [NVM](https://github.com/creationix/nvm#install-script) (https://nodejs.org/en/download/)
+    - [ ] have a working version of npm and node `node -v` and `npm -v` should give version numbers
+    - [ ] understand how [commonjs](https://nodejs.org/docs/latest/api/modules.html) works
+- [ ] FRONTEND
+    - [ ] Let's use a generator to create the client folder. install [CRA](https://github.com/facebookincubator/create-react-app) with `npm i -g create-react-app`
+    - [ ] CRA will create the folder, add the required packages and install everything to bootstrap. Use `create-react-app client` from this project's root.
+    - [ ] navigate to the newly created folder and explore the react app. Run it with `npm start` to start a server and view it running live
+
+- [ ] BACKEND
+    - [ ] create a folder to handle the server code and dependencies (let's assume the folder is called `server`)
+    - [ ] in the server folder, initiate you npm package with `npm init` as this will be usefull to register our third party modules we will be using (`npm init -y` allow to skip the questionning if you find that anoying).
+    - [ ] add a file named `server.js` in your server folder where your nodejs app will be running. Also add some content like `console.log('hello world') to make sure your app is running.
 
 ## First challenge
 - Create a node server that serve a static folder "as is" which will contain our public html and assets.
