@@ -53,8 +53,9 @@ For any clarification, please open git issues. Also, Google is your friend.
     - [ ] in the server folder, initiate you npm package with `npm init` as this will be usefull to register our third party modules we will be using (`npm init -y` allow to skip the questionning if you find that anoying).
     - [ ] add a file named `server.js` in your server folder where your nodejs app will be running. Also add some content like `console.log('hello world') to make sure your app is running.
 
-## Features
+## First challenge
 - Create a node server that serve a static folder "as is" which will contain our public html and assets.
 - the server must be able to receive [HTTP VERBS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) `GET`, `POST`, `PUT` and `DELETE` on an endpoint called `/api/times` which list, adds, update and remove data from a MySQL database. This is easy using node frameworks such as [Express](https://expressjs.com/)
 - I recommend [Knex](https://www.npmjs.com/package/knex) for javascript style API or [MySql](https://www.npmjs.com/package/mysql) to directly execute SQL queries
 - Use react to list back the entries made by the client
+- Create a pull request from your repo or branch that targets master
