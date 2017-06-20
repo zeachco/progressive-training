@@ -35,7 +35,7 @@ For any clarification, please open git issues. Also, Google is your friend.
 - [ ] FRONTEND
     - [ ] Let's use a generator to create the client folder. install [CRA](https://github.com/facebookincubator/create-react-app) with `npm i -g create-react-app`
     - [ ] CRA will create the folder, add the required packages and install everything to bootstrap. Use `create-react-app client` from this project's root.
-    - [ ] explore the current react app. Run it with `npm start` from the client's folder
+    - [ ] navigate to the newly created folder and explore the react app. Run it with `npm start` to start a server and view it running live
 
 - [ ] BACKEND
     - [ ] create a folder to handle the server code and dependencies (let's assume the folder is called `server`)
