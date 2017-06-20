@@ -53,6 +53,47 @@ For any clarification, please open git issues. Also, Google is your friend.
     - [ ] in the server folder, initiate you npm package with `npm init` as this will be usefull to register our third party modules we will be using (`npm init -y` allow to skip the questionning if you find that anoying).
     - [ ] add a file named `server.js` in your server folder where your nodejs app will be running. Also add some content like `console.log('hello world') to make sure your app is running.
 
+## A few ressources worth metionning for advancing the challenges
+- Frontend
+    - javascript single page app
+        - [react](https://facebook.github.io/react/tutorial/tutorial.html) (reactive javascript view)
+        - [create-react-app](https://github.com/facebookincubator/create-react-app) (bundler for react)
+        - [redux](http://redux.js.org/) (advanced react app)
+    - designs and visuals
+        - [css presentation](https://www.w3schools.com/css/css_intro.asp)
+        - Preprocessors
+            - [sass preprocessing](http://sass-lang.com/guide)
+            - [sass-chokidar](https://github.com/michaelwayman/node-sass-chokidar) (convert sass or scss to css)
+            - [autoprefixer](https://autoprefixer.github.io/)
+        - CSS Frameworks
+            - [bootstrap](http://getbootstrap.com/getting-started/)
+            - [bulma](http://bulma.io/documentation/overview/start/)
+            - [spectre](https://picturepan2.github.io/spectre/)
+- Networking
+    - [whatisrest](http://www.restapitutorial.com/lessons/whatisrest.html) (how to request from client to server)
+- Backend
+    - tools
+        - [postman](https://www.getpostman.com/) (test your backend without frontend)
+        - [nodemon](https://nodemon.io/) (refresh your node app on file change detection)
+    - web server framework
+        - [express](https://expressjs.com/) (easy server framework)
+        - [express static server](https://expressjs.com/en/starter/static-files.html)
+        - [express api tutorial](https://scotch.io/tutorials/build-a-restful-api-using-node-and-express-4)
+        - [core nodejs http modules](https://nodejs.org/api/http.html)
+        - [node path](https://nodejs.org/api/path.html)
+        - [node files](https://nodejs.org/api/fs.html#fs_file_system)
+    - databases
+        - [sql/nosql comparasion](https://www.sitepoint.com/sql-vs-nosql-differences/)
+        - [sqlite quickstart](https://sqlite.org/quickstart.html)
+        - [mysql basic operations](https://dev.mysql.com/doc/mysql-getting-started/en/)
+        - [sql wrapper for node](https://www.npmjs.com/package/mysql#introduction)
+        - [mongodb](https://www.mongodb.com/what-is-mongodb) (nosql json/javascript database)
+        - [mongoose](http://mongoosejs.com/) (mongodb wrapper for nodejs)
+- Quality and processes
+    - [eslint](http://eslint.org/) (code quality inspector documentation)
+    - [node eslint](https://www.npmjs.com/package/eslint) (actual runner to verify your code)
+    - [travis](https://docs.travis-ci.com/user/getting-started/) (continuous integration system)
+
 ## First challenge
 - Create a node server that serve a static folder "as is" which will contain our public html and assets.
 - the server must be able to receive [HTTP VERBS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) `GET`, `POST`, `PUT` and `DELETE` on an endpoint called `/api/times` which list, adds, update and remove data from a MySQL database. This is easy using node frameworks such as [Express](https://expressjs.com/)
