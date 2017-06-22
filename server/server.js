@@ -1,5 +1,8 @@
-const express = require('express');
-const app = express();
+let express = require('express');
+let app = express();
+let path = require('path');
+let serveStatic = require('serve-static');
+let morgan = require('morgan');
 
 app.get('/api/times/get', (request, response) => {
     response.send('Executing GET request !');
@@ -18,4 +21,7 @@ app.delete('/api/times/delete', (request, response) => {
     response.send('Executing DELETE request !');
 })
 
-app.listen('3000', () => console.log('Example app listening on port 3000!'));
+app.use(serveStatic(path.join(__dirname, '../client/build')));
+app.use(morgan(':id :method :url :response-time'));
+
+app.listen('8080', () => console.log('Example app listening on port 8080!'));
