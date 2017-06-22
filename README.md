@@ -41,6 +41,7 @@ For any clarification, please open git issues. Also, Google is your friend.
         - [react](https://facebook.github.io/react/tutorial/tutorial.html) (reactive javascript view)
         - [create-react-app](https://github.com/facebookincubator/create-react-app) (bundler for react)
         - [redux](http://redux.js.org/) (advanced react app)
+        - [xhr / http request](https://www.npmjs.com/package/axios)
     - designs and visuals
         - [css presentation](https://www.w3schools.com/css/css_intro.asp)
         - Preprocessors
