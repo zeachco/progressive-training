@@ -14,7 +14,7 @@ MongoClient.connect('mongodb://abhawsar:password@ds139322.mlab.com:39322/ayushbh
     database = db;
     if (err) throw err
 
-    db.collection('time').find().toArray(function (err, result) {
+    db.collection('times').find().toArray(function (err, result) {
         if (err) throw err
 
         console.log(result)
@@ -45,8 +45,6 @@ app.get('/api/times/:id', (req, res) => {
 });
 
 app.post('/api/times', (req, res) => {
-    //const id = uuid.v1();
-    //data[id] = Object.assign({}, req.body, { id });
     database.collection('times').insertOne({
         id: uuid.v1(),
         time: new Date()
@@ -57,10 +55,17 @@ app.post('/api/times', (req, res) => {
 });
 
 app.put('/api/times/:id', (req, res) => {
-    const id = req.params.id;
-    if (!data[id]) throw new Error(`cannot find data with id ${id}!`);
-    data[id] = req.body;
-    res.json(data[id]);
+    //const id = req.params.id;
+    database.collection('times').updateOne(
+        { id: req.param.id },
+        {
+            $set: { time: new Date() },
+            $currentDate: { lastModified: true }
+        }).then(function (result) {
+            res.json(result);
+        }).catch(function (err) {
+            console.log(err)
+        });
 });
 
 app.patch('/api/times/:id', (req, res) => {
@@ -72,10 +77,14 @@ app.patch('/api/times/:id', (req, res) => {
 
 app.delete('/api/times/:id', (req, res) => {
     const id = req.params.id;
-    if (!data[id]) throw new Error(`cannot find data with id ${id}!`);
-    delete data[id];
-    res.status(201);
-    res.end();
+    database.collection('times').deleteOne({
+        id: req.param.id
+    })
+        .then(function (result) {
+            console.log(result);
+            res.status(201);
+            res.end();
+        })
 });
 
 app.listen(app.get('port'), function () {
