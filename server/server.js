@@ -1,28 +1,83 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
+const express = require('express'); // simple http framework
+const bodyParser = require('body-parser'); // middleware help parsing requests
+const morgan = require('morgan'); // http logger
+const uuid = require('uuid'); // unique id generators
+const app = express();
+const MongoClient = require('mongodb').MongoClient
+//const data = {}; // this replace our database for educationnal purposes
+var database;
 
-app.use(bodyParser.urlencoded({ extended: true }));
+//===========================================================================
+//database connection Test
+//mongodb://localhost:27017/db
+MongoClient.connect('mongodb://abhawsar:password@ds139322.mlab.com:39322/ayushbhawsar_test_db', function (err, db) {
+    database = db;
+    if (err) throw err
+
+    db.collection('time').find().toArray(function (err, result) {
+        if (err) throw err
+
+        console.log(result)
+    })
+})
+//===========================================================================
+
+app.set('port', (process.env.PORT || 3000));
 app.use(bodyParser.json());
+app.use(morgan('dev'));
 
-var port = process.env.PORT || 8080;        // set our port
+app.use(express.static(__dirname + '/public'));
 
-// ROUTES FOR OUR API
-// =============================================================================
-var router = express.Router();              // get an instance of the express Router
-
-// test route to make sure everything is working (accessed at GET http://localhost:8080/api)
-router.get('/', function(req, res) {
-    res.json({ message: 'hooray! welcome to our api!' });   
+app.get('/api/times', (req, res) => {
+    database.collection('times').find().toArray(function (err, result) {
+        if (err) throw err
+        //console.log(result);
+        res.json(result);
+    })
 });
 
-// more routes for our API will happen here
+app.get('/api/times/:id', (req, res) => {
+    database.collection('times').find({ id: req.params.id }).toArray(function (err, result) {
+        if (err) throw err
+        //console.log(result);
+        res.json(result);
+    })
+});
 
-// REGISTER OUR ROUTES -------------------------------
-// all of our routes will be prefixed with /api
-app.use('/api', router);
+app.post('/api/times', (req, res) => {
+    //const id = uuid.v1();
+    //data[id] = Object.assign({}, req.body, { id });
+    database.collection('times').insertOne({
+        id: uuid.v1(),
+        time: new Date()
+    })
+        .then(function (result) {
+            res.json(result);
+        })
+});
 
-// START THE SERVER
-// =============================================================================
-app.listen(port);
-console.log('Magic happens on port ' + port);
+app.put('/api/times/:id', (req, res) => {
+    const id = req.params.id;
+    if (!data[id]) throw new Error(`cannot find data with id ${id}!`);
+    data[id] = req.body;
+    res.json(data[id]);
+});
+
+app.patch('/api/times/:id', (req, res) => {
+    const id = req.params.id;
+    if (!data[id]) throw new Error(`cannot find data with id ${id}!`);
+    data[id] = Object.assign(data[id], req.body);
+    res.json(data[id]);
+});
+
+app.delete('/api/times/:id', (req, res) => {
+    const id = req.params.id;
+    if (!data[id]) throw new Error(`cannot find data with id ${id}!`);
+    delete data[id];
+    res.status(201);
+    res.end();
+});
+
+app.listen(app.get('port'), function () {
+    console.log('Node app is running on port', app.get('port'));
+});
