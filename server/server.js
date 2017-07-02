@@ -70,7 +70,7 @@ app.delete('/api/times/:id', (req, res) => {
         }
     }
     res.status(201);
-    res.send();
+    res.send('Delete successful');
 })
 
 app.use(serveStatic(path.join(__dirname, '../client/build')));
