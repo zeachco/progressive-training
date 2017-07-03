@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   getData() {
-    axios.get('http://localhost:8080/api/times')
+    axios.get('/api/times')
       .then(response => {
         let data = response.data;
         this.setState({ data });
@@ -31,21 +31,21 @@ class App extends Component {
   }
 
   sendData(userData) {
-    axios.post('http://localhost:8080/api/times', userData)
+    axios.post('/api/times', userData)
       .then(response => {
         console.log(response);
       })
   }
 
   updateData(userData) {
-    axios.put('http://localhost:8080/api/times?id=' + userData['id'] + '&name=' + userData['name'])
+    axios.put('/api/times?id=' + userData['id'] + '&name=' + userData['name'])
       .then(response => {
         console.log(response);
       })
   }
 
   deleteData(userData) {
-    axios.delete('http://localhost:8080/api/times/' + userData)
+    axios.delete('/api/times/' + userData)
       .then(response => {
         console.log(response);
       })
@@ -94,7 +94,7 @@ class TableData extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:8080/api/times')
+    axios.get('/api/times')
       .then(response => {
         let data = response.data;
         this.setState({ data });
