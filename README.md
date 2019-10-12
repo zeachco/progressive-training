@@ -1,5 +1,5 @@
 # Progressive training
-This is a challenge project which aims to on-board new JavaScript developers by proposing a full-stack project harder than mere TODO and Hello World examples
+This is a challenge project which aims to on-board new JavaScript developers by proposing a full-stack project harder than TODO and Hello World examples
 
 ## How it works
 Steps by steps, reading this document, you will be asked to perform task which will allow you to interact with most javascript projects as a professional developper.
